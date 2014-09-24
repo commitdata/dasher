@@ -1,7 +1,8 @@
 'use strict';
 
 module.exports = {
-  db: 'mongodb://localhost/mean-prod',
+  //db: 'mongodb://localhost/mean-prod',
+  db: 'mongodb://committee:Commit!1@ds039860.mongolab.com:39860/committee',
   /**
    * Database options that will be passed directly to mongoose.connect
    * Below are some examples.

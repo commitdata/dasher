@@ -1,7 +1,8 @@
 'use strict';
 
 module.exports = {
-  db: 'mongodb://localhost/mean-test',
+  //db: 'mongodb://localhost/mean-test',
+  db: 'mongodb://committee:Commit!1@ds039860.mongolab.com:39860/committee',
   port: 3001,
   app: {
     name: 'MEAN - A Modern Stack - Test'

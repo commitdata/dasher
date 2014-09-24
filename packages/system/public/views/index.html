@@ -1,3 +1,46 @@
-<section data-ng-controller="IndexController">
-  <h1 mean-token="'home-default'">This is the home view</h1>
-</section>
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/bootstrap.css">
+<link rel="stylesheet" href="styles/ui.css">
+
+<script src="js/vendor.js"></script>
+<script src="app/app.js"></script>
+<script src="js/ui.js"></script>
+
+
+<script src="js/app_localization.js"></script>
+<script src="js/app_controllers.js"></script>
+<script src="js/app_task.js"></script>
+
+
+    <body data-ng-app="mean.system" id="app" class="app" data-custom-page data-off-canvas-nav data-ng-controller="AppCtrl" data-ng-class=" {'layout-boxed': admin.layout === 'boxed'} ">
+        <!--[if lt IE 9]>
+            <div class="lt-ie9-bg">
+                <p class="browsehappy">You are using an <strong>outdated</strong> browser.</p>
+                <p>Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            </div>
+        <![endif]-->
+
+        <section data-ng-include=" 'views/header.html' " id="header" class="header-container" data-ng-controller="HeaderCtrl" data-ng-class="{ 'header-fixed': admin.fixedHeader,
+                                  'bg-white': ['11','12','13','14','15','16','21'].indexOf(admin.skin) >= 0,
+                                  'bg-dark': admin.skin === '31',
+                                  'bg-primary': ['22','32'].indexOf(admin.skin) >= 0,
+                                  'bg-success': ['23','33'].indexOf(admin.skin) >= 0,
+                                  'bg-info-alt': ['24','34'].indexOf(admin.skin) >= 0,
+                                  'bg-warning': ['25','35'].indexOf(admin.skin) >= 0,
+                                  'bg-danger': ['26','36'].indexOf(admin.skin) >= 0
+                 }"></section>
+
+        <div class="main-container">
+            <aside data-ng-include=" 'views/nav.html' " id="nav-container" class="nav-container" data-ng-class="{ 'nav-fixed': admin.fixedSidebar,
+                                    'nav-horizontal': admin.menu === 'horizontal',
+                                    'nav-vertical': admin.menu === 'vertical',
+                                    'bg-white': ['31','32','33','34','35','36'].indexOf(admin.skin) >= 0,
+                                    'bg-dark': ['31','32','33','34','35','36'].indexOf(admin.skin) < 0
+                   }">
+            </aside>
+
+            <div id="content" class="content-container">
+                <section data-ng-view class="view-container {{admin.pageTransition.class}}"></section>
+            </div>
+        </div>
+    </body>
